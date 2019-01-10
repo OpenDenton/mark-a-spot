@@ -5,13 +5,3 @@
 api_version: 1
 php_version: 7.1
 web_docroot: true
-workflows:
-  deploy_product:
-      - type: webphp
-        description: 'Run composer install & drupal-scaffold'
-        script: private/scripts/deploy_product/composer-install.php
-  sync_code:
-    after:
-      - type: webphp
-        description: Push changes back to GitHub if needed
-        script: private/scripts/quicksilver/quicksilver-pushback/push-back-to-github.php
